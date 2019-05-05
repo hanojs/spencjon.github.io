@@ -22,7 +22,7 @@
 */
 
 // Define base and accent colors
-$base-color: #FF9800;
+$base-color: rgba(#6B7A8F, 0.904);
 $base-color-hover: darken($base-color, 20%);
 
 // Define background colors
@@ -30,11 +30,11 @@ $background: rgb(255, 255, 255);
 $background-alt: #f2f2f5;
 
 // Define border colors
-$border: #dcd9d9;
+$border: #F7882F;
 
 // Define text colors
-$heading: #374054;
-$text: #74808a;
+$heading: darken(#F7C331, 40%);
+$text: darken(rgb(80, 73, 63), 5%);
 
 /*
     ---------------------
@@ -135,7 +135,7 @@ body {
 
 nav {
     position: absolute;
-    top: 0;
+    top: 10;
     left: 0;
     right: 0;
     text-align: center;
@@ -150,10 +150,13 @@ nav {
         height: 10%;
         display: flex;
         flex-direction: column;
-        background: $background;
+        background: #3c424c;
         text-align: center;
         padding: 10px;
-        margin: 20vh;
+        margin-top: 15vh;
+        margin-left: 2%;
+        width: 150px;
+
         border-radius: 20px;
     }
 
@@ -163,8 +166,7 @@ nav {
     }
 
     a {
-        display: block;
-        color: $base-color;
+        color: lighten($base-color, 15%);
         padding: 10px;
 
         &:hover {
@@ -711,8 +713,8 @@ footer {
         display: inline-block;
         margin: 7px;
         padding: 5px 10px;
-        color: $heading;
-        background: darken($background-alt, 5%);
+        color: darken($heading, 15%);
+        background: lighten($border, 30%);
         list-style: none;
         cursor: default;
         font-size: 1.2em;
@@ -902,34 +904,53 @@ footer {
 
 }
 
-// Small Devices
-@media only screen and (max-width : 768px) {
+@keyframes dropHeader {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+    
 
-    header {
+// Small Devices
+@media only screen and (max-width : 1000px) {
+
+    nav {
         position: fixed;
         display: none;
         z-index: 999;
-        animation: none;
-        bottom: 0;
-        height: 100%;
+        top: 0;
+        height: auto;
+        width: 100%;
+        animation-name: dropHeader;
+        animation-iteration-count: 1;
+        animation-timing-function: ease;
+        animation-duration: 0.75s;
+        ul {
+            animation-name: dropHeader;
+            animation-iteration-count: 1;
+            animation-timing-function: ease;
+            animation-duration: 0.75s;
+            display: inline-block;
+            flex-direction: column;
+            background: #3c424c;
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    
+
     }
 
     #mobile-menu-open, #mobile-menu-close {
-        display: block;
+        display: inline-block;
     }
 
-    #menu {
-        height: 100%;
-        overflow-y: auto;
-        box-shadow: none;
-        border-radius: 0;
-        width: 100%;
-        display: flex;
-        li {
-            display: flex;
-            margin-bottom: 10px;
-        }
-    }
+
 
     #lead-content {
         h1 {
