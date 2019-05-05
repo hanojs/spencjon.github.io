@@ -30,7 +30,7 @@ $background: rgb(255, 255, 255);
 $background-alt: #f2f2f5;
 
 // Define border colors
-$border: #F7882F;
+$border: lighten(#F7882F, 30%);
 
 // Define text colors
 $heading: darken(#F7C331, 40%);
@@ -157,7 +157,7 @@ nav {
         margin-left: 2%;
         width: 150px;
 
-        border-radius: 15px;
+        border-radius: 10px;
     }
 
     li {
@@ -343,6 +343,7 @@ footer {
     --------------------------
 */
 
+
 #lead {
     position: relative;
     height: 50vh;
@@ -374,6 +375,9 @@ footer {
         text-transform: uppercase;
         letter-spacing: 0.05em;
         line-height: 0.9em;
+        #lastName {
+            color: $border;
+        }        
     }
 
     h2 {
@@ -590,7 +594,7 @@ footer {
     max-width: 700px;
     margin: 0 auto 30px auto;
     padding: 15px;
-    border: 1px solid $border;
+    border: 1px solid darken($border, 30%);
     text-align: left;
 
     h3 {
@@ -714,7 +718,7 @@ footer {
         margin: 7px;
         padding: 5px 10px;
         color: darken($heading, 15%);
-        background: lighten($border, 30%);
+        background: $border;
         list-style: none;
         cursor: default;
         font-size: 1.2em;
