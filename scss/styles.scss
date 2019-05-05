@@ -157,7 +157,7 @@ nav {
         margin-left: 2%;
         width: 150px;
 
-        border-radius: 20px;
+        border-radius: 15px;
     }
 
     li {
@@ -927,12 +927,8 @@ footer {
         animation-name: dropHeader;
         animation-iteration-count: 1;
         animation-timing-function: ease;
-        animation-duration: 0.75s;
+        animation-duration: 0.25s;
         ul {
-            animation-name: dropHeader;
-            animation-iteration-count: 1;
-            animation-timing-function: ease;
-            animation-duration: 0.75s;
             display: inline-block;
             flex-direction: column;
             background: #3c424c;
