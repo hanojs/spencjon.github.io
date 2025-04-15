@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "deps"
+    open-pull-requests-limit: 1
+    rebase-strategy: "auto"
+    group:
+      name: "all-dependencies"
+      patterns:
+        - "*"
